@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Search from "./components/Search";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <div className="row justify-content-center mt-4">
+          <div className="col-4">
+            <h1 className="display-4">
+              GitHub <em className="text-success">finder</em>
+            </h1>
+          </div>
+        </div>
+
+        <Search />
+      </div>
+    );
+  }
 }
 
 export default App;
