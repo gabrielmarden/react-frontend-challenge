@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./components/Search";
-
+import User from "./components/User";
 class App extends Component {
   constructor() {
     super();
@@ -19,6 +19,7 @@ class App extends Component {
         </div>
 
         <Search />
+        <User />
       </div>
     );
   }
