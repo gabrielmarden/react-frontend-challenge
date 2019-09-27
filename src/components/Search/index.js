@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 const Search = () => (
   <div className="row justify-content-center mt-3">
@@ -12,12 +13,13 @@ const Search = () => (
           placeholder="Type GitHub username..."
         />
 
-        <button
-          type="submit"
-          className="btn btn-outline-success px-2 ml-2 w-1"
-          id="btn-go"
-        >
-          GO
+        <button className="btn btn-outline-success px-2 ml-2 w-1" id="btn-go">
+          <Link
+            to="/user"
+            className="text-decoration-none font-weight-normal text-success"
+          >
+            GO
+          </Link>
         </button>
       </form>
     </div>

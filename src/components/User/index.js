@@ -8,7 +8,7 @@ class User extends Component {
   render() {
     return (
       <div className="row justify-content-center mt-3">
-        <div className="col-7">
+        <div className="col-6">
           <div
             className="card mb-3 shadow-sm  mb-5 bg-white rounded"
             style={{ maxWidth: "1020px" }}
