@@ -8,15 +8,18 @@ class User extends Component {
   render() {
     return (
       <div className="row justify-content-center mt-3">
-        <div className="col-8">
-          <div class="card mb-3" style={{ "max-width": "1020px" }}>
-            <div class="row no-gutters">
-              <div class="col-md-3">
-                <img src="..." class="card-img" alt="profile" />
+        <div className="col-7">
+          <div
+            className="card mb-3 shadow-sm  mb-5 bg-white rounded"
+            style={{ maxWidth: "1020px" }}
+          >
+            <div className="row no-gutters">
+              <div className="col-md-3">
+                <img src="..." className="card-img" alt="profile" />
               </div>
-              <div class="col-md-9">
-                <div class="card-body">
-                  <h5 class="card-title">
+              <div className="col-md-9">
+                <div className="card-body">
+                  <h5 className="card-title">
                     <span className="mr-1">User</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -27,13 +30,13 @@ class User extends Component {
                       <path d="M4 0l-1 3h-3l2.5 2-1 3 2.5-2 2.5 2-1-3 2.5-2h-3l-1-3z" />
                     </svg>
                   </h5>
-                  <p class="card-text">
+                  <p className="card-text">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
                     longer.
                   </p>
                   <hr />
-                  <a href="#" class="card-link">
+                  <a href="#" className="card-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -44,7 +47,7 @@ class User extends Component {
                     </svg>
                     <span className="ml-1">1,000 fallowers</span>
                   </a>
-                  <a href="mailto:user@mail.com" class="card-link">
+                  <a href="mailto:user@mail.com" className="card-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -58,7 +61,7 @@ class User extends Component {
                     </svg>
                     <span className="ml-1">user@mail.com</span>
                   </a>
-                  <a href="#" class="card-link">
+                  <a href="#" className="card-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
