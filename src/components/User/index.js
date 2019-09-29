@@ -1,11 +1,48 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
+
+const INITIAL_USER = {
+  username: "",
+  stars: "",
+  followers: "",
+  email: "",
+  repos: "",
+  bio: "",
+  avatar: ""
+};
+
 class User extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      ...INITIAL_USER
+    };
+  }
+
+  componentDidMount() {
+    const propUsername = this.props.match.params.username;
+    axios({
+      method: "get",
+      url: `https://api.github.com/users/${propUsername}`
+    })
+      .then(res => {
+        console.log(res.data);
+        this.setState({
+          ...this.state,
+          username: res.data.name,
+          followers: res.data.followers,
+          email: res.data.email,
+          repos: res.data.public_repos,
+          bio: res.data.bio,
+          avatar: res.data.avatar_url
+        });
+      })
+      .catch(e => console.log(e));
   }
 
   render() {
+    const { username, stars, followers, email, repos, bio } = this.state;
     return (
       <div className="row justify-content-center mt-3">
         <div className="col-6">
@@ -20,7 +57,7 @@ class User extends Component {
               <div className="col-md-9">
                 <div className="card-body">
                   <h5 className="card-title">
-                    <span className="mr-1">User</span>
+                    <span className="mr-1">{username}</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
@@ -30,11 +67,7 @@ class User extends Component {
                       <path d="M4 0l-1 3h-3l2.5 2-1 3 2.5-2 2.5 2-1-3 2.5-2h-3l-1-3z" />
                     </svg>
                   </h5>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
+                  <p className="card-text">{bio}</p>
                   <hr />
                   <a href="#" className="card-link">
                     <svg
@@ -45,7 +78,7 @@ class User extends Component {
                     >
                       <path d="M5.5 0c-.51 0-.95.35-1.22.88.45.54.72 1.28.72 2.13 0 .29-.03.55-.09.81.19.11.38.19.59.19.83 0 1.5-.9 1.5-2s-.67-2-1.5-2zm-3 1c-.83 0-1.5.9-1.5 2s.67 2 1.5 2 1.5-.9 1.5-2-.67-2-1.5-2zm4.75 3.16c-.43.51-1.02.82-1.69.84.27.38.44.84.44 1.34v.66h2v-1.66c0-.52-.31-.97-.75-1.19zm-6.5 1c-.44.22-.75.67-.75 1.19v1.66h5v-1.66c0-.52-.31-.97-.75-1.19-.45.53-1.06.84-1.75.84s-1.3-.32-1.75-.84z" />
                     </svg>
-                    <span className="ml-1">1,000 fallowers</span>
+                    <span className="ml-1">{followers} followers</span>
                   </a>
                   <a href="mailto:user@mail.com" className="card-link">
                     <svg
@@ -59,7 +92,7 @@ class User extends Component {
                         transform="translate(0 1)"
                       />
                     </svg>
-                    <span className="ml-1">user@mail.com</span>
+                    <span className="ml-1">{email}</span>
                   </a>
                   <a href="#" className="card-link">
                     <svg
@@ -70,7 +103,7 @@ class User extends Component {
                     >
                       <path d="M1.5 0c-.83 0-1.5.67-1.5 1.5 0 .66.41 1.2 1 1.41v2.19c-.59.2-1 .75-1 1.41 0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5c0-.6-.34-1.1-.84-1.34.09-.09.21-.16.34-.16h2c.82 0 1.5-.68 1.5-1.5v-.59c.59-.2 1-.75 1-1.41 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .66.41 1.2 1 1.41v.59c0 .28-.22.5-.5.5h-2c-.17 0-.35.04-.5.09v-1.19c.59-.2 1-.75 1-1.41 0-.83-.67-1.5-1.5-1.5z" />
                     </svg>
-                    <span className="ml-1">8 Repositories</span>
+                    <span className="ml-1">{repos} Repositories</span>
                   </a>
                 </div>
               </div>
