@@ -3,12 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
 const Search = ({ onChange, value }) => (
-  <div className="row justify-content-center mt-3">
-    <div className="col-6">
-      <form className="form-inline">
+  <div className="row justify-content-center mt-5">
+    <div className="col-8">
+      <form className="form-inline justify-content-center">
         <input
           type="text"
-          className="form-control w-75 ml-2"
+          className="form-control w-50 ml-2"
           id="search-field"
           placeholder="Type GitHub username..."
           onChange={onChange}

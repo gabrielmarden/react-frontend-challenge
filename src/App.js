@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          <div className="row justify-content-center mt-4">
+          <div className="row justify-content-center mt-5">
             <div className="col-4">
               <h1 className="display-4">
                 GitHub <em className="text-success">finder</em>
@@ -27,7 +27,13 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <Search onChange={this.onChange} value={this.state.search} />
+        <Route
+          path="/"
+          exact={true}
+          render={() => (
+            <Search onChange={this.onChange} value={this.state.search} />
+          )}
+        />
 
         <Route path="/user/:username" component={User} />
       </Router>
