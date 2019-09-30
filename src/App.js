@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./components/Search";
 import User from "./components/User";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Repos from "./components/Repos";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +36,9 @@ class App extends Component {
           )}
         />
 
-        <Route path="/user/:username" component={User} />
+        <Route path="/user/:username" exact={true} component={User} />
+
+        <Route path="/user/:username/repos" component={Repos} />
       </Router>
     );
   }

@@ -18,7 +18,8 @@ class User extends Component {
     super(props);
     this.state = {
       ...INITIAL_USER,
-      isLoaded: false
+      isLoaded: false,
+      params_username: props.match.params.username
     };
   }
 
@@ -52,7 +53,8 @@ class User extends Component {
       repos,
       bio,
       avatar,
-      isLoaded
+      isLoaded,
+      params_username
     } = this.state;
     return (
       <div className="mt-5">
@@ -118,7 +120,10 @@ class User extends Component {
                           <span className="ml-1">{email}</span>
                         </a>
                       )}
-                      <a href="#" className="card-link">
+                      <Link
+                        to={`/user/${params_username}/repos`}
+                        className="card-link"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
@@ -128,7 +133,7 @@ class User extends Component {
                           <path d="M1.5 0c-.83 0-1.5.67-1.5 1.5 0 .66.41 1.2 1 1.41v2.19c-.59.2-1 .75-1 1.41 0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5c0-.6-.34-1.1-.84-1.34.09-.09.21-.16.34-.16h2c.82 0 1.5-.68 1.5-1.5v-.59c.59-.2 1-.75 1-1.41 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .66.41 1.2 1 1.41v.59c0 .28-.22.5-.5.5h-2c-.17 0-.35.04-.5.09v-1.19c.59-.2 1-.75 1-1.41 0-.83-.67-1.5-1.5-1.5z" />
                         </svg>
                         <span className="ml-1">{repos} Repositories</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
