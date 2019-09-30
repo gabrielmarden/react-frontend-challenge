@@ -29,7 +29,6 @@ class User extends Component {
       url: `https://api.github.com/users/${propUsername}`
     })
       .then(res => {
-        console.log(res.data);
         this.setState({
           ...this.state,
           username: res.data.name,
@@ -135,9 +134,9 @@ class User extends Component {
                 </div>
               </div>
             ) : (
-              <div class="text-center">
-                <div class="spinner-border text-success" role="status">
-                  <span class="sr-only">Loading...</span>
+              <div className="text-center">
+                <div className="spinner-border text-success" role="status">
+                  <span className="sr-only">Loading...</span>
                 </div>
               </div>
             )}
