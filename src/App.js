@@ -4,6 +4,7 @@ import Search from "./components/Search";
 import User from "./components/User";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Repos from "./components/Repos";
+import RepoDetail from "./components/RepoDetail";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -39,6 +40,8 @@ class App extends Component {
         <Route path="/user/:username" exact={true} component={User} />
 
         <Route path="/user/:username/repos" component={Repos} />
+
+        <Route path="/repos/:full_name" component={RepoDetail} />
       </Router>
     );
   }
