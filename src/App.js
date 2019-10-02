@@ -14,6 +14,7 @@ class App extends Component {
   }
 
   onChange = e => {
+    e.preventDefault();
     this.setState({ search: e.target.value });
   };
 
