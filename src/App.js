@@ -22,9 +22,9 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          <div className="row justify-content-center mt-5">
-            <div className="col-4">
-              <h1 className="display-4">
+          <div className="row justify-content-around mt-5">
+            <div className="col-sm-auto col-12">
+              <h1 className="d-none d-lg-block display-4 ">
                 GitHub <em className="text-success">finder</em>
               </h1>
             </div>
