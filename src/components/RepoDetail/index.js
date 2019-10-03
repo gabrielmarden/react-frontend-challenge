@@ -38,9 +38,12 @@ class RepoDetail extends Component {
   render() {
     const { name, description, stars, language, link } = this.state;
     return (
-      <div className="row justify-content-center mt-4">
-        <div className="col-4 p-4">
-          <div className="card" style={{ width: "30rem" }}>
+      <div className="row mt-4 justify-content-around">
+        <div className="col-4">
+          <div
+            className="card"
+            style={{ maxWidth: "30rem", minWidth: "10rem" }}
+          >
             <div className="card-header font-weight-bold text-center">
               {name}
             </div>

@@ -66,12 +66,12 @@ class Repos extends Component {
               to={`/user/${params_username}`}
               className="btn btn-outline-success px-2 ml-2 w-1"
             >
-              {`${params_username} profile`}
+              {`Profile`}
             </Link>
           </div>
         </div>
         <div className="row justify-content-center mt-3">
-          <div className="col-6">
+          <div className="col-6 table-responsive-lg">
             {isLoaded ? (
               <div>
                 <table className="table table-hover">

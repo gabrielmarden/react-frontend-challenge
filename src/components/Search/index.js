@@ -6,7 +6,7 @@ const Search = ({ onChange, value }) => (
   <div className="row justify-content-center">
     <div className="col-6">
       <form action={`/user/${value}`} method="GET">
-        <div className="form-group row">
+        <div className="form-group row justify-content-center">
           <div className="col-md-10 col-12">
             <input
               type="text"
@@ -16,7 +16,7 @@ const Search = ({ onChange, value }) => (
               onChange={onChange}
             />
           </div>
-          <div className="col-md-2 col-sm-12 mt-md-0 mt-2 ">
+          <div className="col-md-2 col-sm-4 mt-md-0 mt-2 col-4">
             <Link to={`/user/${value}`} className="btn btn-outline-success w-1">
               GO
             </Link>

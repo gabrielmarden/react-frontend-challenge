@@ -5,6 +5,7 @@ import User from "./components/User";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Repos from "./components/Repos";
 import RepoDetail from "./components/RepoDetail";
+import logo from "./inc/images/github-finder.png";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,9 +25,7 @@ class App extends Component {
         <div className="container">
           <div className="row justify-content-around mt-5">
             <div className="col-sm-auto col-12">
-              <h1 className="d-none d-lg-block display-4 ">
-                GitHub <em className="text-success">finder</em>
-              </h1>
+              <img src={logo} alt="github-finder" />
             </div>
           </div>
         </div>
